@@ -1,4 +1,6 @@
-Geting Started
+.. _getting_started:
+
+Getting Started
 ==============
 
 This page contains the most common steps for setting up and getting
@@ -9,8 +11,7 @@ course <https://learn.llx.edly.io/course/practical-hpc/>`__, which
 contains the material below and more. The course will walk you through
 these steps in more detail and often with videos to see how it is done.
 The course is self paced, can be accessed anytime, and is kept up to
-date. More reference material is available in the `How to
-Use <https://supercloud.mit.edu/how-use>`__ section of this site (some
+date. More reference material is available throughout site (some
 of this material links to those pages).
 
 When your account is first created you will have a small startup
@@ -18,8 +19,7 @@ allocation. Once you complete the `Practical HPC
 course <https://learn.llx.edly.io/course/practical-hpc/>`__ you can
 request your account be updated to the standard allocation by sending
 email to supercloud@mit.edu. Resource allocations are listed on the
-`Systems and
-Software <http://supercloud.mit.edu/systems-and-software>`__ page.
+:ref:`systems_and_software` page.
 
 Logging in Via ssh
 ------------------
@@ -46,8 +46,7 @@ For instructions on how to generate ssh keys, retrieve your public key,
 and additional troubleshooting tips, watch the videos in the "Account
 Setup and SSH Keys" section in the "Getting Started" module of the
 `Practical HPC
-course <https://learn.llx.edly.io/course/practical-hpc/>`__, or `see
-this page <https://supercloud.mit.edu/requesting-account#ssh-keys>`__.
+course <https://learn.llx.edly.io/course/practical-hpc/>`__, or :ref:`see this page <ssh_keys>`.
 
 First open a command line terminal window where you generated your ssh
 keys. Enter the following command, where ``USERNAME`` is your username
@@ -70,8 +69,8 @@ resources with a number of other researchers, staff, and students so it
 is important that you read this page and use the system as intended.
 
 Being a cluster, there are several machines connected together with a
-network. We refer to these as **nodes**. Most nodes in the cluster are
-referred to as **compute nodes**, this is where the computation is done
+network. We refer to these as **nodes**. Most nodes in the cluster are
+referred to as **compute nodes**, this is where the computation is done
 on the system (where you will run your code). When you ssh into the
 system you are on a special purpose node called the **login node**. The
 login node, as its name suggests, is where you log in and is for editing
@@ -92,8 +91,7 @@ Software and Packages
 The first thing you may want to do is make sure the system has the
 software and packages you need. We have installed a lot of software and
 packages on the system already, even though it may not be immediately
-obvious that it is there. Review our page on `Software and Package
-Management <https://supercloud.mit.edu/software-and-package-management>`__,
+obvious that it is there. Review our page on :ref:`software_and_packages`,
 paying particular attention to the section on modules and installing
 packages for the language that you use. If you are ever unsure if we
 have a particular software, and you cannot find it, please send us an
@@ -123,7 +121,7 @@ the same as the file ``myscript.sh``. When you first log in you are in
 you **home directory**. Your home directory is where you can put all the
 code and data you need to run your job. Your home directory is not
 accessible to other users, if you need a space to share files with other
-users, let us know and we can make a shared **group directory** for you.
+users, let us know and we can make a shared **group directory** for you.
 The path to your home directory on SuperCloud is
 ``/home/gridsan/[USERNAME]``, where ``[USERNAME]`` is your username. The
 character ``~`` is also shorthand for your home directory in any Linux
@@ -206,8 +204,7 @@ you need into your home directory on the system. If your code is in
 github you can use git commands on the system to clone your repository
 to your home directory. You can also transfer your files to your home
 directory from your computer by using the commands scp or rsync. Read
-the page on `Accessing and Transferring Data and
-Files <https://supercloud.mit.edu/accessing-and-transferring-data-and-files>`__ to
+the page on :ref:`transferring_files` to
 learn how to use these commands and transfer what you need to your home
 directory.
 
