@@ -107,7 +107,7 @@ window, follow the steps below. On Mac and Linux, open your standard
 terminal window. On Windows 10 and higher, you can use the Windows
 command prompt. If the command prompt does not recognize the ssh-keygen
 command, you can install OpenSSH by `following the instructions on this
-page <https://linoxide.com/how-use-ssh-commands-windows-10-command-prompt/>`__.
+page <https://pureinfotech.com/install-openssh-client-windows-10/>`__.
 If your Windows operating system is older than Windows 10, see the note
 :ref:`below <#pre-windows10>`.
 
