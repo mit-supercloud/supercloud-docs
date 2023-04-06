@@ -8,25 +8,27 @@
       
       
       
-        <link rel="canonical" href="https://supercloud.mit.edu/">
+        <link rel="canonical" href="https://supercloud.mit.edu/using-the-system/best-practices/gpu-jobs/">
       
       
+        <link rel="prev" href="../filesystem/">
       
-        <link rel="next" href="requesting-account/">
       
-      <link rel="icon" href="assets/images/favicon.png">
+        <link rel="next" href="../../web-portal/">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.5">
     
     
       
-        <title>SuperCloud Docs</title>
+        <title>Optimizing your GPU Jobs - SuperCloud Docs</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.7a7fce14.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.7a7fce14.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.a0c5b2b5.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a0c5b2b5.min.css">
       
       
 
@@ -42,7 +44,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -67,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#welcome-to-the-supercloud-documentation" class="md-skip">
+        <a href="#optimizing-your-gpu-jobs" class="md-skip">
           Skip to content
         </a>
       
@@ -83,7 +85,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="SuperCloud Docs" class="md-header__button md-logo" aria-label="SuperCloud Docs" data-md-component="logo">
+    <a href="../../.." title="SuperCloud Docs" class="md-header__button md-logo" aria-label="SuperCloud Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -102,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              Optimizing your GPU Jobs
             
           </span>
         </div>
@@ -169,7 +171,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="SuperCloud Docs" class="md-nav__button md-logo" aria-label="SuperCloud Docs" data-md-component="logo">
+    <a href="../../.." title="SuperCloud Docs" class="md-nav__button md-logo" aria-label="SuperCloud Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -186,21 +188,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
         Home
       </a>
-      
     </li>
   
 
@@ -213,7 +205,7 @@
   
   
     <li class="md-nav__item">
-      <a href="requesting-account/" class="md-nav__link">
+      <a href="../../../requesting-account/" class="md-nav__link">
         Requesting an Account
       </a>
     </li>
@@ -228,7 +220,7 @@
   
   
     <li class="md-nav__item">
-      <a href="getting-started/" class="md-nav__link">
+      <a href="../../../getting-started/" class="md-nav__link">
         Getting Started
       </a>
     </li>
@@ -243,7 +235,7 @@
   
   
     <li class="md-nav__item">
-      <a href="systems-and-software/" class="md-nav__link">
+      <a href="../../../systems-and-software/" class="md-nav__link">
         Systems and Software
       </a>
     </li>
@@ -258,7 +250,7 @@
   
   
     <li class="md-nav__item">
-      <a href="acknowledging-us/" class="md-nav__link">
+      <a href="../../../acknowledging-us/" class="md-nav__link">
         Acknowledging Us
       </a>
     </li>
@@ -271,14 +263,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
       
       
       
@@ -287,7 +281,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_6">
           <span class="md-nav__icon md-icon"></span>
           Using the System
@@ -327,7 +321,7 @@
   
   
     <li class="md-nav__item">
-      <a href="using-the-system/files-and-data/transferring-files/" class="md-nav__link">
+      <a href="../../files-and-data/transferring-files/" class="md-nav__link">
         Transferring Files
       </a>
     </li>
@@ -341,7 +335,7 @@
   
   
     <li class="md-nav__item">
-      <a href="using-the-system/files-and-data/shared-groups/" class="md-nav__link">
+      <a href="../../files-and-data/shared-groups/" class="md-nav__link">
         Shared Groups
       </a>
     </li>
@@ -389,7 +383,7 @@
   
   
     <li class="md-nav__item">
-      <a href="using-the-system/software-packages/" class="md-nav__link">
+      <a href="../../software-packages/" class="md-nav__link">
         Software and Package Management
       </a>
     </li>
@@ -437,7 +431,7 @@
   
   
     <li class="md-nav__item">
-      <a href="using-the-system/monitoring-system-and-jobs/" class="md-nav__link">
+      <a href="../../monitoring-system-and-jobs/" class="md-nav__link">
         Monitoring System and Job Status
       </a>
     </li>
@@ -451,7 +445,7 @@
   
   
     <li class="md-nav__item">
-      <a href="using-the-system/submitting-jobs/submitting-jobs/" class="md-nav__link">
+      <a href="../../submitting-jobs/submitting-jobs/" class="md-nav__link">
         Submitting Jobs
       </a>
     </li>
@@ -465,7 +459,7 @@
   
   
     <li class="md-nav__item">
-      <a href="using-the-system/submitting-jobs/job-array-triples/" class="md-nav__link">
+      <a href="../../submitting-jobs/job-array-triples/" class="md-nav__link">
         Job Array Triples
       </a>
     </li>
@@ -484,14 +478,16 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" checked>
       
       
       
@@ -500,7 +496,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_6_4">
           <span class="md-nav__icon md-icon"></span>
           Best Practices
@@ -513,7 +509,7 @@
   
   
     <li class="md-nav__item">
-      <a href="using-the-system/best-practices/filesystem/" class="md-nav__link">
+      <a href="../filesystem/" class="md-nav__link">
         Best Practices for using the Filesystem
       </a>
     </li>
@@ -525,11 +521,59 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="using-the-system/best-practices/gpu-jobs/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Optimizing your GPU Jobs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Optimizing your GPU Jobs
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#getting-more-out-of-the-gpus" class="md-nav__link">
+    Getting More out of the GPUs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requesting-more-gpus" class="md-nav__link">
+    Requesting More GPUs
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -575,7 +619,7 @@
   
   
     <li class="md-nav__item">
-      <a href="using-the-system/web-portal/" class="md-nav__link">
+      <a href="../../web-portal/" class="md-nav__link">
         Logging In
       </a>
     </li>
@@ -589,7 +633,7 @@
   
   
     <li class="md-nav__item">
-      <a href="using-the-system/databases/" class="md-nav__link">
+      <a href="../../databases/" class="md-nav__link">
         Databases
       </a>
     </li>
@@ -603,7 +647,7 @@
   
   
     <li class="md-nav__item">
-      <a href="using-the-system/jupyter-notebooks/" class="md-nav__link">
+      <a href="../../jupyter-notebooks/" class="md-nav__link">
         Jupyter Notebooks
       </a>
     </li>
@@ -632,7 +676,7 @@
   
   
     <li class="md-nav__item">
-      <a href="faqs/" class="md-nav__link">
+      <a href="../../../faqs/" class="md-nav__link">
         Frequently Asked Questions
       </a>
     </li>
@@ -647,7 +691,7 @@
   
   
     <li class="md-nav__item">
-      <a href="getting-help/" class="md-nav__link">
+      <a href="../../../getting-help/" class="md-nav__link">
         Getting Help
       </a>
     </li>
@@ -662,7 +706,7 @@
   
   
     <li class="md-nav__item">
-      <a href="glossary/" class="md-nav__link">
+      <a href="../../../glossary/" class="md-nav__link">
         Glossary
       </a>
     </li>
@@ -689,6 +733,28 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#getting-more-out-of-the-gpus" class="md-nav__link">
+    Getting More out of the GPUs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requesting-more-gpus" class="md-nav__link">
+    Requesting More GPUs
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -702,9 +768,86 @@
                   
 
 
-<h1 id="welcome-to-the-supercloud-documentation">Welcome to the SuperCloud Documentation</h1>
-<p>The purpose of these pages is to give a quick way to access information about how to use the MIT SuperCloud system. The <a href="systems-and-software/">Systems and Software</a> page contains information about what is available on the system. In the Using the System tab, you will find information about how to set up your environment, including gaining access to <a href="using-the-system/software-packages/">software and packages</a> you need, <a href="using-the-system/files-and-data/transferring-files/">how to transfer files</a> between your machine and the system, how to <a href="using-the-system/submitting-jobs/submitting-jobs/">submit</a>, <a href="using-the-system/monitoring-system-and-jobs/">monitor, and stop jobs</a>, and how to use <a href="using-the-system/jupyter-notebooks/">Jupyter</a> and the <a href="using-the-system/web-portal/">web portal</a>. <a href="getting-help/">Getting Help</a> describes how to best ask for help, if you cannot find the answer to your question on this page or on our <a href="faqs/">Frequently Asked Questions</a> page. Finally, we include a <a href="glossary/">Glossary</a> of words that we use in this wiki and what we mean when we say them.</p>
-<p>Note that Supercloud has Monthly Downtimes which are scheduled for the <strong>Third Thursday</strong> of each month. During downtimes the system is not available. Downtimes usually last about a day and emails are sent when they are complete. We also send out a reminder email a few days before each downtime. If you are not getting these emails, send an email to <a href="mailto:supercloud@mit.edu">supercloud@mit.edu</a> and we will verify that you are on our mailing list.</p>
+<h1 id="optimizing-your-gpu-jobs">Optimizing your GPU Jobs</h1>
+<p>The GPUs on Supercloud often are in very high demand. Before asking for
+more GPUs you'll want to do what you can to optimize your code to get
+the most out of the resources you do have.</p>
+<p>The first thing you need to do is profile your code. Time your code both
+with and without the GPU. When you are running with a GPU, monitor the
+GPU Utilization and GPU Memory use. You can do this by going to the
+compute node where it is running (get the node name from LLstat, then
+ssh to the node with <code>ssh nodename</code>) and run the <code>nvidia-smi -l</code>
+command (press <code>Ctrl+C</code> to exit <code>nvidia-smi -l</code> when you are done).</p>
+<p>If your GPU utilization and GPU memory use is low, that means you
+aren't getting the full advantage out of the GPU. If this is the case,
+try out some of the suggestions below.</p>
+<p>If you are only getting a small speedup, say 2x or 4x, especially after
+trying the suggestions below, it may not be worthwhile using GPUs at
+all. In general, the CPU nodes on Supercloud are more available so we
+will likely be willing to increase your allocation of CPU nodes to make
+up for the small loss of speedup switching to CPUs.</p>
+<h2 id="getting-more-out-of-the-gpus">Getting More out of the GPUs</h2>
+<p>If your GPU utilization and memory use are low, usually this means you
+might be able to get some more performance out of the GPUs. There are a
+few things you can try if you are training machine learning models:</p>
+<ul>
+<li>Increase the batch size.</li>
+<li>Enable CUDA kernel tuning.<ul>
+<li>For Pytorch, add this before the training starts:
+    <code>torch.backends.cudnn.benchmark = True</code></li>
+<li>For Tensorflow, set this environment variable in your submission
+    script: <code>export TF_CUDNN_USE_AUTOTUNE=1</code></li>
+</ul>
+</li>
+<li>If you are using Tensorflow you can also try mixed-precision
+    training (we haven't played with this in Pytorch, but it could be
+    possible).<ul>
+<li>Tensorflow 2.4.1 and newer (anaconda/2021a+)<ul>
+<li>Add the following to the beginning of your Python code:<ul>
+<li><code>from tensorflow.keras import mixed_precision</code></li>
+<li><code>policy = mixed_precision.Policy('mixed_float16')</code></li>
+<li><code>mixed_precision.set_global_policy(policy)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Pre-Tensorflow 2.4.1 (anaconda/2020b and older)<ul>
+<li>To do so set the following environment variables in your
+    submission script:<ul>
+<li><code>export TF_ENABLE_AUTO_MIXED_PRECISION_GRAPH_REWRITE=1</code></li>
+<li><code>export TF_ENABLE_AUTO_MIXED_PRECISION=1</code></li>
+</ul>
+</li>
+<li>And add this to your Python code, here <code>opt</code> is the
+    optimizer object:<ul>
+<li><code>opt = tf.train.experimental.enable_mixed_precision_graph_rewrite(opt)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>If the number of filters in the model layers is a multiple of 64,
+    you will see an additional speedup because the V100 tensor cores are
+    optimized for matmul/conv ops of these sizes.</li>
+<li>If both GPU utilization and memory are below 50% you could try to
+    train two models per GPU. This isn't too hard to do with <a href="../../submitting-jobs/job-array-triples/">Triples
+    Mode</a>, simply set
+    the number of processes per node to 4.</li>
+</ul>
+<h2 id="requesting-more-gpus">Requesting More GPUs</h2>
+<p>If you have tried the above suggestions and you still find you need more
+GPUs you can put in a request. Send an email to
+<a href="mailto:supercolud@mit.edu">supercloud@mit.edu</a> and tell us what you
+need, what you need it for, and how long you need the allocation
+increase. Are you trying to run a large distributed training run, or are
+you doing hyperparameter searches? Justify your request with numbers:
+show us that you have compared CPU and GPU run times, that you have good
+GPU utilization, and that you have tried the above suggestions. Explain
+how you got to the number of GPUs you are requesting. If the system is
+not too busy we may grant your request. Keep in mind that others are
+likely to have the same paper deadlines as you and we may not be able to
+grant requests during these busy periods, so plan ahead.</p>
 
 
 
@@ -742,10 +885,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["content.code.copy"], "search": "assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="assets/javascripts/bundle.407015b8.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.407015b8.min.js"></script>
       
     
   </body>
