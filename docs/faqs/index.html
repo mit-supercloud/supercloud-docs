@@ -743,6 +743,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-do-i-fix-the-glibcxx_3429-not-found-error-when-using-an-anaconda-module" class="md-nav__link">
+    How do I fix the GLIBCXX_3.4.29 not found error when using an Anaconda module?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#how-can-i-get-more-help" class="md-nav__link">
     How can I get more help?
   </a>
@@ -915,6 +922,13 @@
         <li class="md-nav__item">
   <a href="#what-does-the-underutilizingoversubscribing-the-node-warning-message-mean" class="md-nav__link">
     What does the Underutilizing/Oversubscribing the node warning message mean?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-i-fix-the-glibcxx_3429-not-found-error-when-using-an-anaconda-module" class="md-nav__link">
+    How do I fix the GLIBCXX_3.4.29 not found error when using an Anaconda module?
   </a>
   
 </li>
@@ -1132,6 +1146,16 @@ see if you get improved performance.</p>
 <p>For more information on how to pick the best triple for your job, take a
 look at the <a href="../using-the-system/submitting-jobs/submitting-jobs/#triples-mode-tuning">tuning</a> process and
 recommendations.</p>
+<h2 id="how-do-i-fix-the-glibcxx_3429-not-found-error-when-using-an-anaconda-module">How do I fix the GLIBCXX_3.4.29 not found error when using an Anaconda module?</h2>
+<p>You may encounter the following error when using anaconda/2023a.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="ne">ImportError</span><span class="p">:</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">x86_64</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">gnu</span><span class="o">/</span><span class="n">libstdc</span><span class="o">++.</span><span class="n">so</span><span class="mf">.6</span><span class="p">:</span> <span class="n">version</span> <span class="err">`</span><span class="n">GLIBCXX_3</span><span class="mf">.4.29</span><span class="s1">&#39; not found (required by /state/partition1/llgrid/pkg/anaconda/anaconda3-2023a/lib/python3.9/site-packages/pandas/_libs/window/aggregations.cpython-39-x86_64-linux-gnu.so)</span>
+</span></code></pre></div>
+<p>The libstdc++ library containing the appropriate GLIBCXX version is found in the lib directory of the anaconda installation. Anaconda/2023a is installed at /state/partition1/llgrid/pkg/anaconda/anacond3-2023a. The anaconda library path has to be set in the <code>LD_LIBRARY_PATH</code> environment variable.</p>
+<p>To set the <code>LD_LIBRARY_PATH</code> run:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span>/state/partition1/llgrid/pkg/anaconda/anaconda3-2023a/lib:<span class="nv">$LD_LIBRARY_PATH</span>
+</span></code></pre></div>
+<p>If you are running a batch job, you can add this line to your job submission script. For interactive jobs, run this line before starting your application. For Jupyter, add this line to your <code>llsc_notebook_bashrc</code> file (see how <a href="../using-the-system/jupyter-notebooks/#a-note-on-environment-variables-and-modules">here</a>).</p>
+<p>The above error may occur in other anaconda modules, you can find the anaconda installation directory by running the command which python, and set <code>LD_LIBRARY_PATH</code> variable accordingly.</p>
 <h2 id="how-can-i-get-more-help">How can I get more help?</h2>
 <p>If you have a question that is not answered here, send email to
 <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#117;&#112;&#101;&#114;&#99;&#108;&#111;&#117;&#100;&#64;&#109;&#105;&#116;&#46;&#101;&#100;&#117;">&#115;&#117;&#112;&#101;&#114;&#99;&#108;&#111;&#117;&#100;&#64;&#109;&#105;&#116;&#46;&#101;&#100;&#117;</a> for more help.</p>
