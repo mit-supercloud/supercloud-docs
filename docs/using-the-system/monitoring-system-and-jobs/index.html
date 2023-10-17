@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.5">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.6a10b989.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.35e1ed30.min.css">
       
       
 
@@ -568,6 +568,26 @@
     Monitoring Jobs
   </a>
   
+    <nav class="md-nav" aria-label="Monitoring Jobs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#llstat" class="md-nav__link">
+    LLstat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#llload" class="md-nav__link">
+    LLload
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -943,6 +963,26 @@
     Monitoring Jobs
   </a>
   
+    <nav class="md-nav" aria-label="Monitoring Jobs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#llstat" class="md-nav__link">
+    LLstat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#llload" class="md-nav__link">
+    LLload
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1001,6 +1041,8 @@ read output for checking system status:</p>
 the scheduler that's being used (Slurm), the number of unclaimed nodes,
 and the number of available slots.</p>
 <h2 id="monitoring-jobs">Monitoring Jobs</h2>
+<p>To list all of your running jobs you can use the <a href="#llstat"><code>LLstat</code></a> command. For more information about how your jobs are utilizing the resources, you can use the <a href="#llload"><code>LLload</code></a> command.</p>
+<h3 id="llstat">LLstat</h3>
 <p>You can monitor your jobs using the <code>LLstat</code> command:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="o">[</span>StudentX@login-0<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>LLstat<span class="w">   </span>LLGrid:<span class="w"> </span>txe1<span class="w"> </span><span class="o">(</span>running<span class="w"> </span>slurm<span class="w"> </span><span class="m">16</span>.05.8<span class="o">)</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>JOBID<span class="w">     </span>ARRAY_J<span class="w">    </span>NAME<span class="w">        </span>USER<span class="w">    </span>START_TIME<span class="w">          </span>PARTITION<span class="w">  </span>CPUS<span class="w">  </span>FEATURES<span class="w">  </span>MIN_MEMORY<span class="w">  </span>ST<span class="w">  </span>NODELIST<span class="o">(</span>REASON<span class="o">)</span><span class="w">   </span>
@@ -1013,6 +1055,50 @@ and the number of available slots.</p>
 their names, the start time, the number of cpus per task, its status,
 and the node that it is running on. If it is in error state, it lists
 that as well.</p>
+<h3 id="llload">LLload</h3>
+<p>For more information about how your jobs are utilizing the resources, you can use the <code>LLload</code> command.</p>
+<p>The nodes in the main partitions on SuperCloud are exclusive by user, meaning nodes will be shared between different users, but multiple jobs from the same user can run together on the same node. This makes it very easy to examine how well your jobs are using the resources on the node, without jobs from others influencing those numbers.</p>
+<p>To more view these statistics, we've introduced the LLload command that you can use to evaluate the efficiency of your jobs. If you run:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">CPU Only Jobs</label><label for="__tabbed_1_2">GPU Jobs</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>LLload
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>LLGrid:<span class="w"> </span>SuperCloud<span class="o">(</span>TXE1<span class="o">)</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>Username:<span class="w"> </span>studentx,<span class="w"> </span>Nodes<span class="w"> </span>used:<span class="w"> </span><span class="m">4</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>HOSTNAME<span class="w"> </span>CORES<span class="w"> </span>-<span class="w">  </span><span class="nv">USED</span><span class="w"> </span><span class="o">=</span><span class="w">  </span>FREE<span class="w">    </span>LOAD<span class="w"> </span>MEMORY<span class="w"> </span>-<span class="w">   </span><span class="nv">USED</span><span class="w"> </span><span class="o">=</span><span class="w">   </span>FREE
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>d-4-13-1<span class="w">    </span><span class="m">48</span><span class="w"> </span>-<span class="w">    </span><span class="nv">48</span><span class="w"> </span><span class="o">=</span><span class="w">     </span><span class="m">0</span><span class="w">   </span><span class="m">27</span>.09<span class="w">  </span>192GB<span class="w"> </span>-<span class="w">   </span><span class="nv">82GB</span><span class="w"> </span><span class="o">=</span><span class="w">  </span>110GB
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>d-6-3-1<span class="w">     </span><span class="m">48</span><span class="w"> </span>-<span class="w">    </span><span class="nv">48</span><span class="w"> </span><span class="o">=</span><span class="w">     </span><span class="m">0</span><span class="w">    </span><span class="m">7</span>.43<span class="w">  </span>192GB<span class="w"> </span>-<span class="w">   </span><span class="nv">20GB</span><span class="w"> </span><span class="o">=</span><span class="w">  </span>172GB
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>c-16-13-4<span class="w">   </span><span class="m">48</span><span class="w"> </span>-<span class="w">    </span><span class="nv">48</span><span class="w"> </span><span class="o">=</span><span class="w">     </span><span class="m">0</span><span class="w">    </span><span class="m">9</span>.23<span class="w">  </span>192GB<span class="w"> </span>-<span class="w">   </span><span class="nv">17GB</span><span class="w"> </span><span class="o">=</span><span class="w">  </span>175GB
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>c-17-13-3<span class="w">   </span><span class="m">48</span><span class="w"> </span>-<span class="w">    </span><span class="nv">48</span><span class="w"> </span><span class="o">=</span><span class="w">     </span><span class="m">0</span><span class="w">    </span><span class="m">7</span>.68<span class="w">  </span>192GB<span class="w"> </span>-<span class="w">   </span><span class="nv">67GB</span><span class="w"> </span><span class="o">=</span><span class="w">  </span>125GB
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>LLload<span class="w"> </span>-g
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>LLGrid:<span class="w"> </span>SuperCloud<span class="o">(</span>TXE1<span class="o">)</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>Username:<span class="w"> </span>studentx,<span class="w"> </span>Nodes<span class="w"> </span>used:<span class="w"> </span><span class="m">2</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>HOSTNAME<span class="w"> </span>CORES<span class="w"> </span>-<span class="w">  </span><span class="nv">USED</span><span class="w"> </span><span class="o">=</span><span class="w">  </span>FREE<span class="w">    </span>LOAD<span class="w"> </span>MEMORY<span class="w"> </span>-<span class="w">   </span><span class="nv">USED</span><span class="w"> </span><span class="o">=</span><span class="w">   </span>FREE<span class="w">  </span>GPUS<span class="w"> </span>-<span class="w">  </span><span class="nv">USED</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>FREE<span class="w"> </span>LOAD<span class="w"> </span>GPUMEM<span class="w"> </span>-<span class="w">  </span><span class="nv">USED</span><span class="w"> </span><span class="o">=</span><span class="w">  </span>FREE
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>d-10-10-1<span class="w">    </span><span class="m">40</span><span class="w"> </span>-<span class="w">    </span><span class="nv">40</span><span class="w"> </span><span class="o">=</span><span class="w">     </span><span class="m">0</span><span class="w">    </span><span class="m">2</span>.71<span class="w">  </span>384GB<span class="w"> </span>-<span class="w">   </span><span class="nv">48GB</span><span class="w"> </span><span class="o">=</span><span class="w">  </span>336GB<span class="w">     </span><span class="m">2</span><span class="w"> </span>-<span class="w">     </span><span class="nv">2</span><span class="w"> </span><span class="o">=</span><span class="w">    </span><span class="m">0</span><span class="w"> </span><span class="m">0</span>.40<span class="w">   </span>64GB<span class="w"> </span>-<span class="w">   </span><span class="nv">4GB</span><span class="w"> </span><span class="o">=</span><span class="w">  </span>60GB
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>d-13-12-1<span class="w">    </span><span class="m">40</span><span class="w"> </span>-<span class="w">    </span><span class="nv">40</span><span class="w"> </span><span class="o">=</span><span class="w">     </span><span class="m">0</span><span class="w">    </span><span class="m">0</span>.22<span class="w">  </span>384GB<span class="w"> </span>-<span class="w">   </span><span class="nv">49GB</span><span class="w"> </span><span class="o">=</span><span class="w">  </span>335GB<span class="w">     </span><span class="m">2</span><span class="w"> </span>-<span class="w">     </span><span class="nv">2</span><span class="w"> </span><span class="o">=</span><span class="w">    </span><span class="m">0</span><span class="w"> </span><span class="m">0</span>.40<span class="w">   </span>64GB<span class="w"> </span>-<span class="w">   </span><span class="nv">4GB</span><span class="w"> </span><span class="o">=</span><span class="w">  </span>60GB
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<p>this command lists all of the nodes that you have jobs running on, how many of the cores on those nodes you have allocated, and some statistics about how the resources on those nodes are being used:</p>
+<ul>
+<li>CPU Load: how much of the CPUs are used (5 minute average)</li>
+<li>Target: 50-150% of the number of CPUs (24.0-72.0 for the Xeon-P8 CPU nodes and 20.0-60.0 for the Xeon-G6 GPU nodes)</li>
+<li>Memory Utilization: how much memory you are using, plus memory used for caching</li>
+<li>GPU Utilization: how much of both GPUs are being used, 2.0 is 100% of both GPUs (snapshot)</li>
+<li>Target: 50-100% of the GPUs allocated (0.5 or higher for 1 GPU, 1.0 or higher for 2 GPUs)</li>
+<li>GPU Memory: how much of the GPU memory is being used</li>
+</ul>
+<p>A good target for CPU Load is 50-150% of the number of CPUs. For example, that is 24-48 for the Xeon-P8 CPU nodes and 20-40 for the Xeon-G6 GPU nodes, see the <a href="../../systems-and-software/">Systems and Software</a> page for current core counts. If this number is lower, it's likely you could take advantage of more resources on the node. If you find the load numbers are very high, you risk the chance of speeddown or even overwhelming the node. You have a few knobs to turn to adjust your cpu utilization, often this is by either by changing the number of threads used by your application or by running more jobs or processes per node. Adjusting these is very easy if you are submitting your job with <a href="../submitting-jobs/submitting-jobs/#triples-mode-tuning">Triples Mode</a>, which we highly encourage for those jobs that support it.</p>
+<p>Since the memory utilization includes some additional values you will need to ssh to the node and run htop to see your true memory utilization, or use the <code>sacct</code> command after the job has completed to get the peak memory utilization (see <a href="../submitting-jobs/submitting-jobs/#adding-more-memory-or-cores-per-task">this page</a>).</p>
+<p>The GPU load is normalized such that 100% utilization on both GPUs will give a value of 2, so if both GPUs are well utilized you'll see a value close to 2. Note that this is derived from an instantaneous value rather than averaged over a period of time, so you may have to run it a few times to get a good idea of your GPU utilization. If you find your GPU utilization is low, check out our page on <a href="../best-practices/gpu-jobs/">Optimizing your GPU Usage</a>. You can see these numbers broken down by GPU and more information by adding the <code>--detail</code> flag:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>LLload<span class="w"> </span>-g<span class="w"> </span>--detail
+</span></code></pre></div>
 <h2 id="stopping-jobs">Stopping Jobs</h2>
 <p>Jobs can be stopped using the <code>LLkill</code> command. You specify the list of
 job IDs, separated by commas that you would like to stop, for example:</p>
@@ -1026,7 +1112,7 @@ job IDs, separated by commas that you would like to stop, for example:</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 6, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 21, 2023</span>
       
     
   </small>
