@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.7">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.8">
     
     
       
@@ -331,7 +331,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../systems-and-software/" class="md-nav__link">
+      <a href="../supercloud-software/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2197,158 +2197,6 @@ launch a pMatlab job, please let us know what you've tried, and also
 copy, paste and send any errors that you see to <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#117;&#112;&#101;&#114;&#99;&#108;&#111;&#117;&#100;&#64;&#109;&#105;&#116;&#46;&#101;&#100;&#117;">&#115;&#117;&#112;&#101;&#114;&#99;&#108;&#111;&#117;&#100;&#64;&#109;&#105;&#116;&#46;&#101;&#100;&#117;</a>.
 Please attach any files that might be helpful in diagnosing the
 problem.</p>
-<!--
-TODO: Merge/Link
-
-This section is word-for-word the same as the one in pMatlab Job Problems:
-
-## Steps to Sanity Check and Debug
-
-If you are able to submit a job but receive errors that do not seem
-related to your application, we recommend the following strategy:
-
-### 1st Step - Is my SuperCloud configuration correct?
-
-An easy way to check on potential configuration issues is to run the
-`Param_Sweep` example. `Param_Sweep` is the application that
-we recommend you use to test your account configuration at
-set-up time and as a "sanity check" to see that the configuration
-hasn't been corrupted. There are instructions for running Param_Sweep
-on the [Verifying your pMatlab setup](TBD/verify-pMatlab-setup) page.
-
-TODO: Add link when available.
-
-### 2nd Step - You can run Param_Sweep, but your code fails
-
-Your configuration is correct, so the next step is to look at the output
-from your job. In this case, we are not looking at files that are
-application specific but rather at the output that is normally sent to
-the command window. Just as the processor writes to the MATLAB command
-window of your desktop when you run your code on your local desktop system,
-the remote SuperCloud compute nodes also produce output which is
-then directed to a ".out" file in the MatMPI directory (or a
-subdirectory within MatMPI) of your working MATLAB® directory.
-
-The first task is to see that all of the remote processors started a
-valid MATLAB® session and created the .out file. To check this,
-
-- go to the MatMPI directory in your working directory
-- to find your output log files, look for subdirectories within the
-    MatMPI directory with names like this (If your job ran on multiple
-    compute nodes, there will be several of these subdirectories):\
-     \
-    p\<start-pid\>-p\<end-pid\>\_\<compute node name\>\
-     \
-    where:\
-         `p<start-pid>` is the id of the first process running on the
-    compute node whose name is `<compute node name>`\
-         `p<end-pid>` is the id of the last process running on the
-    compute node whose name is `<compute node name>`\
-     
-- look at the list of files in those subdirectories - there should be
-    a total of n-1 files with the .out extension
-- each of the .out files should include your filename, the processor
-    id and the .out extension - e.g. for `Param_Sweep` on 4 processors you
-    would see; Param_sweep.0.out, Param_sweep.1.out, Param_sweep.2.out and Param_sweep.3.out.
-
-If any " .out" file is missing, this is a problem and should be
-reported to the SuperCloud Team by sending email to <supercloud@mit.edu>
-(Often what the user sees is that their application hangs on an `agg`
-command and with a bit of inspection they discover that one remote
-processor didn't properly start its MATLAB® session.)
-
-### 3rd Step - Errors, Warnings and Messages from the remote MATLAB® sessions.
-
-If all of the remote MATLAB® sessions started properly, the next step is
-to check each of the .out files. Each .out file contains all of the
-diary or screen output from a remote node. In most cases these files
-should have the same information, with the exception of numerical data,
-and should provide
-some indication of a warning or error related to the failure of the
-compute job. If the error message is not clear to you, or you are unsure
-how to correct the error send email, with the error information, to
-<supercloud@mit.edu>.
-
-If error messages were sent to STDERR by any of the remote MATLAB®
-sessions, these error messages will appear in the .out files. These
-error messages will also be written to the .err file (located in the
-MatMPI directory). The process id (pid) of the process which generated
-the error will be pre-pended to the error message so you can look in
-that process's .out file for additional output that may help you debug
-the cause of the error.
--->
-
-<!--
-TODO: Link/Merge pages
-This section is almost exactly the same as "Common Problems Launching or Running Your pMatlab Job" on pMatlab Job Problems
-
-## Handling Common Job Errors
-
-In this section, you'll find some of the more common pMatlab job errors
-that you might see, along with recommendations for fixing them.
-
-You may need to look at your job's log files to see if your job
-reported any errors. See the page Finding Your pMatlab Output and
-Results page for directions on how to locate your pMatlab job log files.
-
-### fl:filesystem:NotDirectoryError
-
-MATLAB® often runs into errors with its cache directory when it is
-created (by default) in your home directory, as \~/.matlab. You may see
-an error from MATLAB® that includes the text
-`fl:filesystem:notdirectoryerror`.
-
-In order to avoid these potential issues, you can point MATLAB® to a
-different location for creating its cache directory. You can find
-directions on how to change the MATLAB® cache directory
-[here](TBD/changing-the-matlab-cache-dir).
-
-### ???Undefined function or variable 'MatMPIdefs1'
-
-The mostly likely reason for this error is that your path is not set
-properly and you are missing the ./MatMPI path. Send email to
-<supercloud@.mit.edu> and a member of the SuperCloud team will help you
-resolve the path issue.
-
-### "OUT OF MEMORY" errors when running pMatlab code
-
-In order to handle large compute jobs, you should divide and
-distribute the workload.
-
-If you don't need to aggregate a large data structure, you can create a
-distributed matrix using more processors so that each processor is
-working on a smaller portion of the data. The `Param_Sweep` example in
-your SuperCloud home directory \~/examples/Param_Sweep provides an example of
-how to do this.
-
-We recommend our online course, *Practical HPC.* The course can be found
-on our [LLX platform](https://learn.llx.edly.io/course/practical-hpc){target="_blank"}.
-The PGAS Example: pMatlab Implementation section, within the Distributed
-Applications module provides a detailed introduction, working
-step-by-step through the Parameter Sweep application that is in the
-examples directory in your home directory. It should take approximately
-30-45 minutes to work through the section.
-The presentation illustrates the pMatlab's simple method of converting
-application code from serial to parallel.
-
-### Your pMatlab program hangs
-
-If your pMatlab program seems to be hung (the output logs are empty or
-have not had additional data written to them, or the `LLstat`
-command shows the job is not in the RUNNING state), you
-should delete the job.
-
-The preferred method for deleting a job is to use
-`LLkill <jobID>`. You obtain the \<jobID\> by using the command
-`LLstat`. These commands are described on the [General Job
-Management
-Commands](TBD/general-job-management-commands)
-page.
-
-The `LLkill` method cleanly closes all of the remote processes
-as well as your local process.
--->
-
 <h3 id="references">References</h3>
 <p>Here is a list of webpages that were mentioned here, plus some others
 that might be helpful:</p>
@@ -2385,7 +2233,7 @@ that might be helpful:</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 26, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 5, 2024</span>
   </span>
 
     
@@ -2439,7 +2287,7 @@ that might be helpful:</p>
     <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.caa56a14.min.js"></script>
+      <script src="../assets/javascripts/bundle.8fd75fb4.min.js"></script>
       
         <script src="../js/open_in_new_tab.js"></script>
       

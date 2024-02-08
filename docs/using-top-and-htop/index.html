@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.7">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.8">
     
     
       
@@ -331,7 +331,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../systems-and-software/" class="md-nav__link">
+      <a href="../supercloud-software/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1683,15 +1683,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -1971,15 +1962,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -2040,10 +2022,6 @@ the compute nodes in the NODELIST(REASON) column.</p>
 processes is running. The following sections will help you gather more
 information about your running job.</p>
 <h2 id="if-your-job-is-terminating-prematurely">If your job is terminating prematurely</h2>
-<!--
-TODO: update the link for finding memory requirements once all of the pages have been re-organized
--->
-
 <p>One common reason jobs terminate prematurely is because the node runs
 out of memory. We have instructions for checking the memory usage of a
 completed job on the page <a href="../submitting-jobs/#adding-more-memory-or-cores-per-task">Finding the Memory Requirements of My
@@ -2097,11 +2075,9 @@ example, we specified [1 4 2], which means:</p>
 </ul>
 <p>Enter 'q' (for quit) to return to the Linux shell prompt.</p>
 <h3 id="well-distributed-processes">Well distributed processes</h3>
-<p>In this first <code>htop</code> screenshot, we see that our 4 MATLAB® processes are
-running on different processors. </p>
-<!-- TODO - check to see why this next line is not valid for this screenshot: You can click on the screenshot to view
-a larger version, then use the browser's back arrow to return to this
-page.
+<p>In this first <code>htop</code> screenshot, we see that our 4 MATLAB® processes are running on different processors. </p>
+<!-- 
+TODO - We should replace these with screenshots that are easier to see.
 -->
 
 <p><img alt="MatMulTest htop 256 procs good distribution with 4 processes working concurrently" src="../images/MatMulTest04-1-4-2-htop-256-procs-good-distr.png" title="Using htop to view distribution for application that is well distributed." /></p>
@@ -2113,7 +2089,6 @@ the time, contact <a href="mailto:supercloud@mit.edu">supercloud@mit.edu</a>; we
 provide some recommendations on how to get the processes distributed
 properly. </p>
 <p><img alt="MatMulTest htop 256 procs poor distribution, submitted to work on 4 processors but all the work is being done by a single process." src="../images/MatMulTest04-1-4-2-htop-256-procs-bad-distr.png" title="MatMulTest htop 256 procs poor distribution, submitted to work on 4 processors but all the work is being done by a single process" /></p>
-<h3 id="_1"></h3>
 
 
 
@@ -2134,7 +2109,7 @@ properly. </p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 26, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 5, 2024</span>
   </span>
 
     
@@ -2188,7 +2163,7 @@ properly. </p>
     <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.caa56a14.min.js"></script>
+      <script src="../assets/javascripts/bundle.8fd75fb4.min.js"></script>
       
         <script src="../js/open_in_new_tab.js"></script>
       
